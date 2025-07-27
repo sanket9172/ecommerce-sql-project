@@ -1,0 +1,11 @@
+-- All customers
+SELECT * FROM Customers;
+
+-- Orders by customer
+SELECT * FROM Orders WHERE customer_id = 1;
+
+-- Customer total
+SELECT GetCustomerTotal(1) AS TotalSpent;
+
+-- Low stock products
+SELECT * FROM Products WHERE stock < 5;

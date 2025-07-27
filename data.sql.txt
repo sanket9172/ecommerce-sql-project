@@ -1,0 +1,14 @@
+INSERT INTO Customers (name, email) VALUES
+('Sanket Patil', 'sanket@email.com');
+
+INSERT INTO Products (name, price, stock) VALUES
+('Laptop', 55000, 10),
+('Headphones', 1500, 20);
+
+INSERT INTO Orders (customer_id) VALUES (1);
+
+INSERT INTO Order_Items (order_id, product_id, quantity) VALUES
+(1, 1, 1);
+
+INSERT INTO Payments (order_id, amount) VALUES
+(1, 55000);

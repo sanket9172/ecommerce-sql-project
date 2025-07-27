@@ -1,0 +1,22 @@
+DELIMITER //
+
+CREATE PROCEDURE PlaceOrder(
+    IN p_customer_id INT,
+    IN p_product_id INT,
+    IN p_quantity INT
+)
+BEGIN
+    DECLARE v_order_id INT;
+
+    INSERT INTO Orders (customer_id) VALUES (p_customer_id);
+    SET v_order_id = LAST_INSERT_ID();
+
+    INSERT INTO Order_Items (order_id, product_id, quantity)
+    VALUES (v_order_id, p_product_id, p_quantity);
+
+    UPDATE Products SET stock = stock - p_quantity
+    WHERE product_id = p_product_id;
+END;
+//
+
+DELIMITER ;
